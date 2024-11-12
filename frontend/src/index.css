@@ -1,0 +1,66 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #2ecc71;
+  --text-color: #333333;
+  --background-color: #f5f5f5;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+@layer components {
+  .text-primary {
+    color: var(--primary-color);
+  }
+
+  .bg-primary {
+    background-color: var(--primary-color);
+  }
+
+  .hover\:bg-primary-dark:hover {
+    background-color: var(--primary-dark);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+
+  .bg-login {
+    background-image: url('../image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .btn {
+    @apply font-bold py-2 px-4 rounded;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white;
+  }
+
+  .btn-primary:hover {
+    @apply bg-primary-dark;
+  }
+
+  .input {
+    @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+  }
+
+  .input:focus {
+    @apply outline-none ring-2 ring-primary;
+  }
+}
